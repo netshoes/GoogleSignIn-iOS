@@ -8,7 +8,7 @@ This is a dynamic version of the [Google Sign-In](https://developers.google.com/
 
 - Add this line to your `Cartfile`:
 ```
-github "https://github.com/fabio914/GoogleSignIn-iOS" ~> 4.2
+github "https://github.com/fabio914/GoogleSignIn-iOS" ~> 5.0.2
 ```
  - Update your dependencies:
 ```
@@ -18,11 +18,6 @@ $ carthage update GoogleSignIn-iOS --platform ios
  - Add `GoogleSignIn.framework/GoogleSignIn.bundle` to your Xcode project's **Copy Bundle Resources** build phase.
  - In the **Project > Target > Info > URL Types** panel, create a new item and paste your `REVERSED_CLIENT_ID` into the **URL Schemes** field. You can find your `REVERSED_CLIENT_ID` in the `GoogleService-Info.plist` file.
  - Follow these [instructions](https://developers.google.com/identity/sign-in/ios/sign-in?ver=swift) as if you *manually installed the SDK*.
-
-# Version
-
- - XCode 8.3
- - iOS 9.3
  
  # Reference
  

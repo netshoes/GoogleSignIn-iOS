@@ -24,6 +24,10 @@
 		A385C6EB1FD5626B00FCAD41 /* GIDProfileData.h in Headers */ = {isa = PBXBuildFile; fileRef = A385C6E51FD5626B00FCAD41 /* GIDProfileData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A385C6EC1FD5626B00FCAD41 /* GIDSignIn.h in Headers */ = {isa = PBXBuildFile; fileRef = A385C6E61FD5626B00FCAD41 /* GIDSignIn.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A385C6ED1FD5626B00FCAD41 /* GIDSignInButton.h in Headers */ = {isa = PBXBuildFile; fileRef = A385C6E71FD5626B00FCAD41 /* GIDSignInButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ACCFA3DF2417DC070034515A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCFA3DE2417DC070034515A /* libz.tbd */; };
+		ACCFA3E12417DC0C0034515A /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCFA3E02417DC0C0034515A /* libsqlite3.tbd */; };
+		ACCFA3E32417DC150034515A /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCFA3E22417DC150034515A /* libc++.tbd */; };
+		ACCFA3E52417DC330034515A /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCFA3E42417DC330034515A /* AuthenticationServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		A385C6E61FD5626B00FCAD41 /* GIDSignIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GIDSignIn.h; path = GoogleSignIn/GoogleSignIn.framework/Headers/GIDSignIn.h; sourceTree = "<group>"; };
 		A385C6E71FD5626B00FCAD41 /* GIDSignInButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GIDSignInButton.h; path = GoogleSignIn/GoogleSignIn.framework/Headers/GIDSignInButton.h; sourceTree = "<group>"; };
 		A385C6E81FD5626B00FCAD41 /* GoogleSignIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GoogleSignIn.h; path = GoogleSignIn/GoogleSignIn.framework/Headers/GoogleSignIn.h; sourceTree = "<group>"; };
+		ACCFA3DE2417DC070034515A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		ACCFA3E02417DC0C0034515A /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libsqlite3.tbd; sourceTree = DEVELOPER_DIR; };
+		ACCFA3E22417DC150034515A /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
+		ACCFA3E42417DC330034515A /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AuthenticationServices.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACCFA3E52417DC330034515A /* AuthenticationServices.framework in Frameworks */,
+				ACCFA3E32417DC150034515A /* libc++.tbd in Frameworks */,
+				ACCFA3E12417DC0C0034515A /* libsqlite3.tbd in Frameworks */,
+				ACCFA3DF2417DC070034515A /* libz.tbd in Frameworks */,
 				A30DE068215C1972004A3665 /* LocalAuthentication.framework in Frameworks */,
 				A31FAECF1FD1BBDA00DD6944 /* CoreText.framework in Frameworks */,
 				A31FAECD1FD1BBAB00DD6944 /* Security.framework in Frameworks */,
@@ -109,6 +121,10 @@
 		A31FAEB31FD1B99800DD6944 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ACCFA3E42417DC330034515A /* AuthenticationServices.framework */,
+				ACCFA3E22417DC150034515A /* libc++.tbd */,
+				ACCFA3E02417DC0C0034515A /* libsqlite3.tbd */,
+				ACCFA3DE2417DC070034515A /* libz.tbd */,
 				A30DE067215C1972004A3665 /* LocalAuthentication.framework */,
 				A31FAECE1FD1BBDA00DD6944 /* CoreText.framework */,
 				A31FAECC1FD1BBAB00DD6944 /* Security.framework */,
@@ -179,6 +195,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = A31FAE941FD1B91C00DD6944;
@@ -258,6 +275,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -305,6 +326,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
